@@ -1,0 +1,55 @@
+//OUIZ GAME THAT PRESENT MCQ TYPE QUESTION!
+
+#include <stdio.h>
+
+void celsius(float celsius) {
+    float fahrenheit = (celsius * 9/5) + 32;
+    float kelvin = celsius + 273.15;
+    printf("%.2f Celsius is %.2f Fahrenheit and %.2f Kelvin.\n", celsius, fahrenheit, kelvin);
+}
+
+void fahrenheit(float fahrenheit) {
+    float celsius = (fahrenheit - 32) * 5/9;
+    float kelvin = (fahrenheit - 32) * 5/9 + 273.15;
+    printf("%.2f Fahrenheit is %.2f Celsius and %.2f Kelvin.\n", fahrenheit, celsius, kelvin);
+}
+
+void kelvin(float kelvin) {
+    float celsius = kelvin - 273.15;
+    float fahrenheit = (kelvin - 273.15) * 9/5 + 32;
+    printf("%.2f Kelvin is %.2f Celsius and %.2f Fahrenheit.\n", kelvin, celsius, fahrenheit);
+}
+
+int main() {
+    float temp;
+    int choice;
+
+    printf("Temperature Converter\n");
+    printf("1. Celsius to Fahrenheit and Kelvin\n");
+    printf("2. Fahrenheit to Celsius and Kelvin\n");
+    printf("3. Kelvin to Celsius and Fahrenheit\n");
+    printf("Enter your choice (1/2/3): ");
+    scanf("%d", &choice);
+
+    switch(choice) {
+        case 1:
+            printf("Enter temperature in Celsius: ");
+            scanf("%f", &temp);
+            celsius(temp);
+            break;
+        case 2:
+            printf("Enter temperature in Fahrenheit: ");
+            scanf("%f", &temp);
+            fahrenheit(temp);
+            break;
+        case 3:
+            printf("Enter temperature in Kelvin: ");
+            scanf("%f", &temp);
+            kelvin(temp);
+            break;
+        default:
+            printf("Invalid choice. Please select 1, 2, or 3.\n");
+    }
+
+    return 0;
+}
